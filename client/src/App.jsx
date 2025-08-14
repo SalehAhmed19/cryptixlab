@@ -21,7 +21,7 @@ export default function App() {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
-      className="h-screen p-10 md:p-20"
+      className="h-screen p-5 md:p-20"
     >
       <div className="bg-[#10101029] md:p-10 rounded-2xl backdrop-blur-md min-h-full flex flex-col justify-center">
         <AnimatedHiddenText />
@@ -35,7 +35,7 @@ export default function App() {
               />
             </Zoom>
             <Fade delay={1500}>
-              <p className="md:text-xl font-semibold text-[#787878] md:w-1/2 md:mx-auto">
+              <p className="md:text-xl font-semibold text-[#787878] md:w-1/2 md:mx-auto px-10">
                 Oh! Please wait — our developer is still perfecting his
                 coffee-to-code ratio. Meanwhile, you can stalk us on
                 <span className="text-[#CF2031] font-bold"> Facebook</span>.

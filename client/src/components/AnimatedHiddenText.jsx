@@ -39,7 +39,7 @@ export default function AnimatedHiddenText() {
             />
           </p>
           {delay && (
-            <h1 className="text-4xl text-center">
+            <h1 className="text-2xl md:text-4xl text-center">
               <Typewriter
                 words={["CryptixLab is Launching..."]}
                 loop={1}

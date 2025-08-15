@@ -4,12 +4,13 @@ import logo from "./assets/logo-light.png";
 import { Fade, Zoom } from "react-awesome-reveal";
 import { useEffect, useState } from "react";
 import { FaArrowRightLong, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
-import { MdMail } from "react-icons/md";
+
 import { PiMicrosoftOutlookLogo } from "react-icons/pi";
-import Messenger from "./components/Messenger";
+import FacebookMessenger from "./components/FacebookMessenger";
 
 export default function App() {
   const [showLogo, setShowLogo] = useState(false);
+
   useEffect(() => {
     setTimeout(() => {
       setShowLogo(true);
@@ -77,7 +78,7 @@ export default function App() {
       </div>
 
       {/* Messnger */}
-      <Messenger />
+      <FacebookMessenger />
     </div>
   );
 }

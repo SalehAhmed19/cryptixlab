@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { FaArrowRightLong, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 import { MdMail } from "react-icons/md";
 import { PiMicrosoftOutlookLogo } from "react-icons/pi";
+import Messenger from "./components/Messenger";
 
 export default function App() {
   const [showLogo, setShowLogo] = useState(false);
@@ -74,6 +75,9 @@ export default function App() {
           </div>
         )}
       </div>
+
+      {/* Messnger */}
+      <Messenger />
     </div>
   );
 }

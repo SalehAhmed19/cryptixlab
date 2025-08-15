@@ -6,10 +6,30 @@ import { useEffect, useState } from "react";
 import { FaArrowRightLong, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 
 import { PiMicrosoftOutlookLogo } from "react-icons/pi";
-import FacebookMessenger from "./components/FacebookMessenger";
+// import FacebookMessenger from "./components/FacebookMessenger";
 
 export default function App() {
   const [showLogo, setShowLogo] = useState(false);
+
+  useEffect(() => {
+    // This is the Facebook SDK script loading logic
+    const script = document.createElement("script");
+    script.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    // This is the initialization for the chatbox
+    const chatbox = document.getElementById("fb-customer-chat");
+    chatbox.setAttribute("page_id", "100316586140481"); // Your page ID
+    chatbox.setAttribute("attribution", "biz_inbox");
+  }, []); // Empty dependency array ensures this runs once on mount
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowLogo(true);
+    }, 5500);
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -78,7 +98,8 @@ export default function App() {
       </div>
 
       {/* Messnger */}
-      <FacebookMessenger />
+      {/* <FacebookMessenger /> */}
+      <div id="fb-customer-chat" className="fb-customer-chat"></div>
     </div>
   );
 }

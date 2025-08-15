@@ -77,7 +77,6 @@ export default function App() {
       </div>
 
       {/* Messnger */}
-      <FacebookMessenger />
     </div>
   );
 }

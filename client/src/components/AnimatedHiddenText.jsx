@@ -1,43 +1,40 @@
 import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
+import Loader from "./Loader";
 
 export default function AnimatedHiddenText() {
-  const [complete, setComplete] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [delay, setDelay] = useState(false);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     setTimeout(() => {
-      setComplete(true);
-    }, 5500);
+      setDelay(true);
+    }, 4000);
 
     setTimeout(() => {
-      setDelay(true);
-    }, 1500);
+      setLoading(false);
+    }, 3500);
 
     setTimeout(() => {
       setHidden(true);
-    }, 5000);
+    }, 6000);
   }, []);
 
   return (
     <div>
-      <div className={`${complete && "hidden"}`}>
+      <div>
         <div
           className={`${
             hidden && "transition-opacity duration-500 ease-in-out opacity-0"
           }`}
         >
-          <p className="text-2xl text-center mb-6 text-[#787878]">
-            <Typewriter
-              words={["3.. 2.. 1.. 0"]}
-              loop={1}
-              cursor
-              cursorStyle="_"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1500}
-            />
-          </p>
+          {loading && (
+            <div className="flex justify-center items-center h-screen">
+              <Loader />
+            </div>
+          )}
+          {/*  */}
           {delay && (
             <h1 className="text-2xl md:text-4xl text-center text-[#AA1F29]">
               <Typewriter

@@ -1,11 +1,19 @@
 import AnimatedHiddenText from "./components/AnimatedHiddenText";
-import bg from "./assets/bg.png";
+import bg from "./assets/bg-new.jpg";
 import logo from "./assets/logo-light.png";
-import { Fade, Zoom } from "react-awesome-reveal";
+import avatar from "./assets/wp-logo.png";
+import { Zoom } from "react-awesome-reveal";
 import { useEffect, useState } from "react";
-import { FaArrowRightLong, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
+import {
+  FaArrowRightLong,
+  FaFacebook,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa6";
 
 import { PiMicrosoftOutlookLogo } from "react-icons/pi";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 export default function App() {
   const [showLogo, setShowLogo] = useState(false);
@@ -13,8 +21,9 @@ export default function App() {
   useEffect(() => {
     setTimeout(() => {
       setShowLogo(true);
-    }, 5500);
+    }, 6500);
   }, []);
+
   return (
     <div
       style={{
@@ -22,61 +31,89 @@ export default function App() {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
-      className="h-screen p-5 md:p-20"
+      className="h-screen"
     >
-      <div className="bg-[#10101029] md:p-10 rounded-2xl backdrop-blur-md min-h-full flex flex-col justify-center">
+      <div className="bg-[#10101029] md:p-10 rounded-2xl backdrop-blur-md min-h-full flex flex-col justify-center text-center">
         <AnimatedHiddenText />
+
         {showLogo && (
-          <div className="text-center flex flex-col gap-10">
+          <div>
             <Zoom>
               <img
                 src={logo}
                 alt="logo"
-                className="w-26 md:w-46 mx-auto animate-pulse"
+                className="w-20 md:w-36 mx-auto mb-5 animate-pulse"
               />
-            </Zoom>
-            <Fade delay={1500}>
-              <p className="md:text-xl font-semibold text-[#787878] md:w-1/2 md:mx-auto px-10">
-                Oh! Please wait — our developer is still perfecting his
-                coffee-to-code ratio. Meanwhile, you can stalk us on
-                <span className="text-[#CF2031] font-bold"> Facebook</span>.
-              </p>
-              <a href="https://www.facebook.com/cryptixlab" target="_blank">
-                <button className="bg-[#AA1F29] hover:bg-[#9b1d25] hover:duration-500 hover:scale-105 rounded-full px-4 md:px-8 py-2 md:py-3 md:text-xl font-semibold cursor-pointer flex gap-2 items-center justify-center mx-auto">
-                  Stay Connected <FaArrowRightLong />
-                </button>
-              </a>
+              <p className="md:text-xl">Welcome to</p>
+              <h1 className="md:text-[65px] text-3xl text-[#AA1F29] animate-pulse">
+                Cryptix<span className="text-[#fff]">Lab</span>
+              </h1>
 
-              <div className="flex gap-3 justify-center">
-                <a
-                  href="https://www.linkedin.com/company/cryptixlab/"
-                  target="_blank"
-                  className="bg-white rounded-full text-[#AA1F29] p-2"
-                >
-                  <FaLinkedinIn />
-                </a>
+              <div>
+                <p className="md:text-xl font-semibold text-[#787878] md:w-1/2 md:mx-auto px-10 my-4">
+                  Oh! Please wait — our developer is still perfecting his
+                  coffee-to-code ratio. Meanwhile, you can stalk us on
+                  <span className="text-[#CF2031] font-bold"> Facebook</span>.
+                </p>
 
                 <a
-                  href="https://www.instagram.com/cryptixlab/"
+                  href="https://www.facebook.com/cryptixlab"
                   target="_blank"
-                  className="bg-white rounded-full text-[#AA1F29] p-2"
+                  className="inline-block bg-[#AA1F29] hover:bg-[#9b1d25] hover:duration-500 hover:scale-105 rounded-full px-4 md:px-8 py-2 md:py-3 md:text-xl my-4"
+                  rel="noopener noreferrer"
                 >
-                  <FaInstagram />
+                  <span className="flex items-center gap-3">
+                    Stay Connected <FaArrowRightLong />
+                  </span>
                 </a>
-                <a
-                  href="mailto:cryptixlab@outlook.com"
-                  target="_blank"
-                  className="bg-white rounded-full text-[#AA1F29] p-2"
-                >
-                  <PiMicrosoftOutlookLogo />
-                </a>
+
+                <div className="flex gap-3 justify-center my-4">
+                  <a
+                    href="https://www.linkedin.com/company/cryptixlab/"
+                    target="_blank"
+                    className="bg-[#3333336e] rounded-full text-[#fff] p-4 border border-[#dedede2e]"
+                    rel="noopener noreferrer"
+                  >
+                    <FaLinkedinIn />
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/cryptixlab/"
+                    target="_blank"
+                    className="bg-[#3333336e] rounded-full text-[#fff] p-4 border border-[#dedede2e]"
+                    rel="noopener noreferrer"
+                  >
+                    <FaInstagram />
+                  </a>
+                  <a
+                    href="mailto:cryptixlab@outlook.com"
+                    target="_blank"
+                    className="bg-[#3333336e] rounded-full text-[#fff] p-4 border border-[#dedede2e]"
+                    rel="noopener noreferrer"
+                  >
+                    <PiMicrosoftOutlookLogo />
+                  </a>
+                </div>
               </div>
-            </Fade>
+            </Zoom>
           </div>
         )}
       </div>
 
       {/* Messnger */}
+      <div>
+        <FloatingWhatsApp
+          phoneNumber={import.meta.env.VITE_PHONE}
+          accountName="CryptixLab"
+          avatar={avatar}
+          chatMessage="Hey, how can I help you today?"
+          placeholder="Write your queries..."
+          darkMode={true}
+          // notification="true"
+          // notificationSound="true"
+          // notificationDelay={1500}
+        />
+      </div>
     </div>
   );
 }

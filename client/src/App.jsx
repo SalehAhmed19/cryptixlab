@@ -14,7 +14,6 @@ import {
 
 import { PiMicrosoftOutlookLogo } from "react-icons/pi";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
-import { CustomChat, FacebookProvider } from "react-facebook";
 
 export default function App() {
   const [showLogo, setShowLogo] = useState(false);
@@ -103,7 +102,7 @@ export default function App() {
 
       {/* Messnger */}
       <div>
-        {/* <FloatingWhatsApp
+        <FloatingWhatsApp
           phoneNumber={import.meta.env.VITE_PHONE}
           accountName="CryptixLab"
           avatar={avatar}
@@ -113,11 +112,7 @@ export default function App() {
           // notification="true"
           // notificationSound="true"
           // notificationDelay={1500}
-        /> */}
-
-        <FacebookProvider appId="1658082028188240" chatSupport>
-          <CustomChat pageId="100316586140481" minimized={false} />
-        </FacebookProvider>
+        />
       </div>
     </div>
   );

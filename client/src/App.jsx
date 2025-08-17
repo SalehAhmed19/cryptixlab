@@ -219,7 +219,9 @@ export default function App() {
                     className="inline-block bg-[#AA1F29] hover:bg-[#9b1d25] hover:duration-500 hover:scale-105 rounded-full px-4 md:px-8 py-2 md:py-3 md:text-xl my-4"
                     rel="noopener noreferrer"
                   >
-                    <span className="flex items-center gap-3"></span>
+                    <span className="flex items-center gap-3">
+                      Stay Connected <FaArrowRightLong />
+                    </span>
                   </a>
 
                   <div className="flex gap-3 justify-center my-4">

@@ -258,7 +258,7 @@ const Loader = () => {
         <div className="spinner" />
         <div className="loader">
           {/* <p>loading</p> */}
-          <div className="words">
+          <div className="words text-sm md:text-2xl">
             <span className="word">Hey!</span>
             <span className="word">Get ready</span>
             <span className="word">We're almost there</span>

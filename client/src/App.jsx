@@ -141,7 +141,13 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Zoom } from "react-awesome-reveal";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
-import { FaArrowRightLong, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
+import {
+  FaArrowRightLong,
+  FaInstagram,
+  FaLinkedinIn,
+  FaXTwitter,
+  FaYoutube,
+} from "react-icons/fa6";
 import { PiMicrosoftOutlookLogo } from "react-icons/pi";
 
 // Component-specific imports
@@ -241,6 +247,24 @@ export default function App() {
                       rel="noopener noreferrer"
                     >
                       <FaInstagram />
+                    </a>
+
+                    <a
+                      href="https://x.com/cryptixlab"
+                      target="_blank"
+                      className="bg-[#3333336e] rounded-full text-[#fff] p-4 border border-[#dedede2e]"
+                      rel="noopener noreferrer"
+                    >
+                      <FaXTwitter />
+                    </a>
+
+                    <a
+                      href="https://www.youtube.com/@cryptixlab"
+                      target="_blank"
+                      className="bg-[#3333336e] rounded-full text-[#fff] p-4 border border-[#dedede2e]"
+                      rel="noopener noreferrer"
+                    >
+                      <FaYoutube />
                     </a>
 
                     <a
